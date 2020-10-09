@@ -1,0 +1,64 @@
+{
+  "question": [
+    {
+      "id": 1,
+      "title": "Vue中的this的指向？",
+      "answer": "在Vue所有生命周期方法里使用this，this指向调用它的Vue实例。"
+    },
+    {
+      "id": 2,
+      "title": "Vue中的computed？",
+      "answer": "computed：计算属性，当其依赖的属性值发生变化时，计算属性会重新计算，反之，则使用缓存中的属性值。"
+    },
+    {
+      "id": 3,
+      "title": "computed数据在生命周期的什么时候会被加载？",
+      "answer": "在beforeCreated和created之间完成的。props、methods、data和computed的初始化都是在beforeCreated和created之间完成的。"
+    },
+    {
+      "id": 4,
+      "title": "Vue生命周期中的mounted？",
+      "answer": "在mounted阶段，对浏览器来说，已经完成了dom与css规则树的渲染，并完成了渲染树的布局，vue的template成功挂载在$el中，所以在这一阶段，可以调用节点了。"
+    },
+    {
+      "id": 5,
+      "title": "created周期取页面的dom元素会成功吗？",
+      "answer": "不会，因为在created阶段，dom并未初始化渲染好。"
+    },
+    {
+      "id": 6,
+      "title": "项目的数据为什么放在mounted里面而不是created里面？",
+      "answer": "因为在created里面，vue的template并未挂载在$el中，所以如果想要操作dom，要将数据放在mounted里面。"
+    },
+    {
+      "id": 7,
+      "title": "什么情况下会用到computed？",
+      "answer": "用户输入姓和名，页面上需要展示出完整的姓名。表单提交按钮的禁用/启用，可以通过用户输入的判断，这时可以用到计算属性。"
+    },
+    {
+      "id": 8,
+      "title": "Vue设计中为什么要设计computed这个属性？",
+      "answer": "computed是计算属性，与这个相似的还有watch，不同点是computed可以缓存，所以如果是父组件传值给子组件时，如果传的值是对象形式，需要配合computed，缓存这个对象，否则单独依靠watch不能监听父组件传给子组件的对象的改变。"
+    },
+    {
+      "id": 9,
+      "title": "watch中的deep、immediate属性有什么含义？",
+      "answer": "deep：深度监听，默认值是false，如果设置为true可以深度监听对象属性的变化。immediate：代表组件加载后立即触发回调函数的执行，默认组件加载后不会立即监听watch中的数据变化，当数据改变时才会监听。"
+    },
+    {
+      "id": 10,
+      "title": "Vue中的插槽slot？",
+      "answer": "插槽，可以做模板。如果父组件需要在子组件上放置一些dom，那么dom显示的内容以及在哪个地方显示可以用插槽，在哪个地方显示可以用具名插槽来控制。"
+    },
+    {
+      "id": 11,
+      "title": "v-model怎么实现，作为语法糖，它完整实现是怎么样的？",
+      "answer": "v-model主要提供了两个功能，view层输入值影响data层属性值，data层属性值发生改变会更新view层的变化。（1）input输入值后更新data（2）data属性赋值后更新input的值"
+    },
+    {
+      "id": 12,
+      "title": "虚拟DOM的作用？",
+      "answer": "虚拟DOM就是为了解决浏览器性能问题而被设计出来的。若一次操作中有10次更新dom的操作，虚拟dom不会立即操作dom，而是将这十次更新的diff内容保存到本地一个js对象中，最终将这个js对象一次性添加到dom树上，再进行后续操作，避免大量无谓的计算量。"
+    }
+  ]
+}
